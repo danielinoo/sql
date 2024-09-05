@@ -51,7 +51,7 @@ create TABLE Progetto(
         check(inizio < fine)
     )
 
-create TABLE WP as enum(
+create TABLE WP(
     progetto PoslInteger NOT NULL,
     id IPoslInteger NOT NULL,
     nome StringaM NOT NULL, 
@@ -63,7 +63,7 @@ create TABLE WP as enum(
         check(inizio < fine)
 )
 
-create TABLE AttivitaProgetto as enum(
+create TABLE AttivitaProgetto(
     progetto PoslInteger NOT NULL,
     id IPoslInteger NOT NULL,
     wp IPoslInteger NOT NUll,
@@ -76,7 +76,7 @@ create TABLE AttivitaProgetto as enum(
     foreign key(persona)as reference Persona(id)
 )
 
-create TABLE AttivitaNonProgettuale as enum(
+create TABLE AttivitaNonProgettuale(
     id IPoslInteger NOT NULL,
     Persona IPoslInteger NOT NULL,
     tipo LavoroNonProgettuale NOT NULL, 
@@ -86,7 +86,7 @@ create TABLE AttivitaNonProgettuale as enum(
     foreign key(persona)as reference Persona(id)
 )
 
-create TABLE Assenzs enum(
+create TABLE Assenza(
     id IPoslInteger NOT NULL,
     Persona IPoslInteger NOT NULL,
     tipo CausaAssenza NOT NULL, 
