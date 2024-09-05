@@ -57,7 +57,7 @@ create TABLE WP(
     nome StringaM NOT NULL, 
     inizio date NOT NULL,
     fine date NOT NULL,
-    primary key(id),
+    primary key(progetto,id),
     foreign key (progetto) as reference Progetto(id),
     unique (progetto,nome),
         check(inizio < fine)
